@@ -1,0 +1,112 @@
+Kanoon4U/
+│
+├── backend/ (Kanoon 4 U/)
+│   ├── server.js
+│   ├── app.js
+│   ├── .env
+│   ├── .env.example
+│   ├── package.json
+│   │
+│   ├── config/
+│   │   ├── db.js
+│   │   ├── postgres.js
+│   │   └── mongo.js
+│   │
+│   ├── models/
+│   │   ├── postgres/
+│   │   │   └── User.js
+│   │   │
+│   │   ├── mongo/
+│   │   │   ├── Post.js
+│   │   │   ├── Quiz.js
+│   │   │   └── Activity.js   # userId: String (not ObjectId)
+│   │   │
+│   │   └── UserInterest.js
+│   │
+│   ├── routes/
+│   │   ├── healthRoutes.js
+│   │   ├── dbStatusRoutes.js
+│   │   ├── authRoutes.js
+│   │   ├── feedRoutes.js
+│   │   ├── chatRoutes.js
+│   │   ├── quizRoutes.js
+│   │   ├── activityRoutes.js
+│   │   └── interestRoutes.js
+│   │
+│   ├── controllers/
+│   │   ├── healthController.js
+│   │   ├── dbStatusController.js
+│   │   ├── authController.js
+│   │   ├── feedController.js
+│   │   ├── chatController.js
+│   │   ├── quizController.js
+│   │   ├── activityController.js
+│   │   └── interestController.js
+│   │
+│   ├── services/
+│   │   ├── healthService.js
+│   │   ├── dbStatusService.js
+│   │   ├── authService.js
+│   │   ├── feedService.js
+│   │   ├── chatService.js      # Groq (llama-3.1-8b-instant)
+│   │   ├── quizService.js
+│   │   ├── activityService.js
+│   │   └── interestService.js
+│   │
+│   ├── middleware/
+│   │   ├── securityMiddleware.js
+│   │   ├── authMiddleware.js
+│   │   ├── validateMiddleware.js
+│   │   ├── requestLogger.js
+│   │   └── errorHandler.js
+│   │
+│   └── utils/
+│       ├── logger.js
+│       ├── AppError.js
+│       └── apiResponse.js
+│
+├── frontend/ (kanoon4u-frontend/)
+│   ├── .env.local   # NEXT_PUBLIC_API_URL=http://localhost:3000/api
+│   ├── next.config.ts
+│   ├── tailwind.config.ts
+│   ├── tsconfig.json
+│   ├── package.json
+│   │
+│   ├── app/
+│   │   ├── layout.tsx        # root layout + navbar
+│   │   ├── globals.css
+│   │   │
+│   │   ├── page.tsx          # homepage (hero + features)
+│   │   │
+│   │   ├── feed/
+│   │   │   └── page.tsx      # paginated feed
+│   │   │
+│   │   ├── chat/
+│   │   │   └── page.tsx      # AI chat UI
+│   │   │
+│   │   └── quiz/
+│   │       └── page.tsx      # quiz flow
+│   │
+│   ├── components/
+│   │   ├── Navbar.tsx
+│   │   ├── VerificationBadge.tsx
+│   │   │
+│   │   ├── feed/
+│   │   │   └── PostCard.tsx
+│   │   │
+│   │   ├── chat/             # chat components
+│   │   ├── quiz/             # quiz components
+│   │   │
+│   │   └── ui/               # shared UI (button, badge, etc.)
+│   │
+│   ├── services/
+│   │   ├── api.ts            # base fetch + auth header
+│   │   ├── feedService.ts
+│   │   ├── authService.ts
+│   │   ├── chatService.ts
+│   │   └── quizService.ts
+│   │
+│   └── lib/
+│       └── config.ts         # API_URL from env
+│
+└── README.md (optional)
